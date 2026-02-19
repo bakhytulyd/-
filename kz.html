@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Қазақ тіліндегі подкастар</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1a237e 0%, #311b92 100%);
+            color: #fff;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .podcasts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .podcast-card {
+            background: rgba(0, 26, 103, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .podcast-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .podcast-title {
+            font-size: 1.4rem;
+            padding: 20px 20px 10px;
+            font-weight: 700;
+        }
+        
+        .audio-player-container {
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        
+        .podcast-player {
+            width: 100%;
+            height: 50px;
+            border-radius: 25px;
+            outline: none;
+        }
+        
+        /* Стилизация аудиоплеера */
+        audio::-webkit-media-controls-panel {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 25px;
+        }
+        
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-volume-slider,
+        audio::-webkit-media-controls-mute-button {
+            filter: invert(1);
+        }
+        
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display {
+            color: white;
+        }
+        
+        audio::-webkit-media-controls-timeline {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        
+        .podcast-info {
+            padding: 0 20px 10px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+        
+        .transcript {
+            font-size: 0.8rem;
+            padding: 15px 20px 20px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.5;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            max-height: 120px;
+            overflow-y: auto;
+        }
+        
+        .transcript::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        .transcript::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+        
+        .transcript::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .podcasts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Қазақ тіліндегі подкастар</h1>
+            <p class="subtitle">Төрт керемет подкасты тыңдаңыз. Барлық подкастар қазақ тілінде жазылған.</p>
+        </header>
+        
+        <main>
+            <div class="podcasts-grid">
+                <!-- Подкаст 1 -->
+                <div class="podcast-card">
+                    <h3 class="podcast-title">Неге қазақ тілін білу маңызды?</h3>
+                    <div class="audio-player-container">
+                        <audio controls class="podcast-player">
+                            <source src="Новая-запись.mp3" type="audio/mpeg">
+                            <source src="podcast1.ogg" type="audio/ogg">
+                            Сіздің браузеріңіз аудиоплеерді қолдамайды.
+                        </audio>
+                        <div class="podcast-info">
+                            <span>Ұзақтығы: 1:19</span>
+                        </div>
+                    </div>
+                    <div class="transcript">
+                        Сәлем, құрметті тыңдарман!
+Бүгін біз өте маңызды сұраққа жауап іздейміз: неге қазақ тілін білу керек?
+
+Қазақ тілі – жай ғана қарым-қатынас құралы емес. Бұл – біздің тарихымыз, мәдениетіміз, дүниетанымымыз. Тілді білген адам халықтың жанын түсіне бастайды. Себебі әрбір сөздің артында ғасырлар бойы қалыптасқан мағына, ой, тәрбие жатыр.
+
+Кейде адамдар «қазақ тілін білу міндет емес» деп ойлайды. Бірақ ойланып көрейікші: егер біз өз ана тілімізді білмесек, онда кім біледі? Тілді сақтау – тек мемлекетке емес, әрбір адамға жүктелген жауапкершілік.
+
+Қазақ тілін білу сізге жаңа мүмкіндіктер ашады. Жұмыс саласында, білім алуда, қоғамда өз орныңды табуға көмектеседі. Ең бастысы – өз еліңде өз тіліңде еркін сөйлей алу қандай керемет сезім!
+
+Тілді үйрену қиын деп ойлайтындар бар. Бірақ шын мәнінде, тіл – тірі дүние. Оны күнделікті қолдансаң, ол өздігінен дамиды. Кішкентай қадамдардан бастау жеткілікті: бір сөз, бір сөйлем, бір ой.
+
+Қазақ тілін білу – өзіңді құрметтеу.
+Өзіңді құрметтесең, тіліңді де құрметтей бастайсың.
+                    </div>
+                </div>
+                
+                <!-- Подкаст 2 -->
+                <div class="podcast-card">
+                    <h3 class="podcast-title">Қазақ тілін қалай тиімді үйренуге болады?</h3>
+                    <div class="audio-player-container">
+                        <audio controls class="podcast-player">
+                            <source src="novaia-zapis-6_b7AQG6gi.mp3" type="audio/mpeg">
+                            <source src="podcast2.ogg" type="audio/ogg">
+                            Сіздің браузеріңіз аудиоплеерді қолдамайды.
+                        </audio>
+                        <div class="podcast-info">
+                            <span>Ұзақтығы: 1:09</span>
+                        </div>
+                    </div>
+                    <div class="transcript">
+                        Сәлеметсіз бе!
+Бұл подкаста біз қазақ тілін үйренудің тиімді жолдары туралы сөйлесеміз.
+
+Ең бірінші ереже – қорықпау. Қате сөйлеймін деп уайымдаудың қажеті жоқ. Қате – үйренудің бір бөлігі. Қателеспеген адам дамымайды.
+
+Тілді үйренудің ең жақсы жолы – тыңдау және сөйлеу. Күн сайын қазақша подкаст тыңдаңыз, ән тыңдаңыз, қысқа видеолар көріңіз. Ал тыңдағаныңызды өз сөзіңізбен қайталауға тырысыңыз.
+
+Екінші маңызды нәрсе – күнделікті әдет. Күніне 10–15 минут болса да, қазақ тіліне уақыт бөліңіз. Бір күнде көп үйренуге тырыспаңыз, бірақ күн сайын аз-аздан үйреніңіз.
+
+Үшіншіден – қазақ тілін өміріңіздің бір бөлігіне айналдырыңыз. Телефоныңыздың тілін қазақшаға ауыстырыңыз, жазбаларыңызды қазақша жазыңыз, өз-өзіңізбен қазақша сөйлесіңіз.
+
+Ең бастысы – мотивация. Неге қазақ тілін үйреніп жүрсіз? Сол сұраққа өзіңізге шынайы жауап беріңіз. Сол жауап сізді алға жетелейді.
+
+Қазақ тілін үйрену – ұзақ жол, бірақ өте қызық жол. Ең бастысы – бастау.
+                    </div>
+                </div>
+                
+                <!-- Подкаст 3 -->
+                <div class="podcast-card">
+                    <h3 class="podcast-title">Қазақша ойлау – тілді меңгерудің кілті</h3>
+                    <div class="audio-player-container">
+                        <audio controls class="podcast-player">
+                            <source src="Новая-запись-4.mp3" type="audio/mpeg">
+                            <source src="podcast3.ogg" type="audio/ogg">
+                            Сіздің браузеріңіз аудиоплеерді қолдамайды.
+                        </audio>
+                        <div class="podcast-info">
+                            <span>Ұзақтығы: 0:59</span>
+                        </div>
+                    </div>
+                    <div class="transcript">
+                        Сәлем, тыңдарман!
+Бүгін біз қазақша ойлаудың маңызы туралы әңгімелесеміз.
+
+Көп адам қазақ тілінде сөйлей алмаймын дейді, себебі алдымен орысша немесе басқа тілде ойлап, кейін аударуға тырысады. Ал бұл өте қиын.
+
+Қазақ тілін жақсы меңгеру үшін қазақша ойлауды үйрену керек. Ол үшін қарапайым заттардан бастаңыз. Мысалы, күнделікті әрекеттеріңізді қазақша айтып жүріңіз: «Мен қазір жұмысқа бара жатырмын», «Мен шай ішіп отырмын».
+
+Қазақша ойлау – сөздік қорды автоматты түрде көбейтеді. Сіз жаңа сөздерді жаттамайсыз, олар өздігінен есте қалады.
+
+Сонымен қатар, қазақ тіліндегі мақал-мәтелдерді үйрену өте пайдалы. Олар тілдің логикасын, ұлттық ойлау жүйесін түсінуге көмектеседі.
+
+Тілді тек ереже ретінде емес, тірі мәдениет ретінде қабылдаңыз. Сонда сіз қазақша ойлай бастайсыз, ал сөйлеу өздігінен жеңілдейді.
+
+Есіңізде болсын: қазақша ойлау – тілді меңгерудің ең қысқа жолы.
+                    </div>
+                </div>
+                
+                <!-- Подкаст 4 -->
+                <div class="podcast-card">
+                    <h3 class="podcast-title">Қазақ тілі – болашақтың тілі</h3>
+                    <div class="audio-player-container">
+                        <audio controls class="podcast-player">
+                            <source src="Новая-запись-9.mp3" type="audio/mpeg">
+                            <source src="podcast4.ogg" type="audio/ogg">
+                            Сіздің браузеріңіз аудиоплеерді қолдамайды.
+                        </audio>
+                        <div class="podcast-info">
+                            <span>Ұзақтығы: 1:05</span>
+                        </div>
+                    </div>
+                    <div class="transcript">
+                        Сәлеметсіздер ме!
+Соңғы подкастымызда біз қазақ тілінің болашағы туралы сөйлесеміз.
+
+Қазақ тілі – дамып келе жатқан тіл. Бүгінде қазақ тілінде жаңа терминдер, жаңа контент, жаңа мүмкіндіктер пайда болуда. Әлеуметтік желілерде, подкасттарда, видеоларда қазақ тілі жиі естіліп жүр.
+
+Болашақта қазақ тілін білетін адам сұранысқа ие болады. Себебі тіл – қоғаммен байланыс құралы. Өз тіліңді білсең, өз еліңде сенің дауысың естіледі.
+
+Қазақ тілінің болашағы – жастардың қолында. Ал әрбір жас өзінен бастауы керек. Бүгін бір сөз үйренсең, ертең бір ой айта аласың.
+
+Қазақ тілі – тек өткеннің мұрасы емес, болашақтың негізі.
+Оны дамыту – біздің ортақ міндетіміз.
+
+Тілді білейік, тілді қолданайық, тілді құрметтейік.
+Сонда қазақ тілі шынымен де болашақтың тілі болады.
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2026 Қазақ тіліндегі подкастар. Подкаст Авторлары София және Диас</p>
+            <p>Барлық подкастар қазақ тілінде жазылған.</p>
+        </footer>
+    </div>
+</body>
+</html>
